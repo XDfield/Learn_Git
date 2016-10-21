@@ -1,5 +1,5 @@
 1.	初始化Git仓库:		git init
-2.	添加文件到仓库: 	git add <file> 可反复多次使用,添加多个文件
+2.	添加文件到仓库: 	git add file 可反复多次使用,添加多个文件
 						git commit -m "说明"
 3.	查看工作区状态:		git status
 4.	查看修改内容:		git diff
@@ -9,3 +9,14 @@
 8.	Git每次修改,如果不add到暂存区,就不会加入到commit中
 9.	丢弃工作区的修改:	git checkout -- file
 10.	丢弃缓存区的修改:	git reset HEAD file 再进行丢弃工作区修改
+11.	删除文件:			git rm file 误删可以checkout命令
+12.	关联远程仓库:		git remote add origin https://github.com/XDfield/xxxx/git
+13.	关联后:				git push -u origin master 第一次推送master分支所有内容
+14.	推送最新修改:		git push origin master
+15.	克隆仓库:			git clone <url> Git支持多种协议,https,git(最快)
+16.	查看分支:			git branch
+17.	创建分支:			git branch <name>
+18.	切换分支:			git checkout <name>
+19.	创建+切换分支:		git checkout -b <name>
+20.	合并某分支到当前分支:	git merge <name>
+21.	删除分支:			git branch -d <name>
