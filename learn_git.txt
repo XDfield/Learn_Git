@@ -20,3 +20,33 @@
 19.	创建+切换分支:		git checkout -b <name>
 20.	合并某分支到当前分支:	git merge <name>
 21.	删除分支:			git branch -d <name>
+22.	查看分支合并图:		git log --graph
+23.	Git无法自动合并分支时,必须首先解决冲突,解决冲突后再提交,合并完成
+24.	master分支应该是非常稳定的,也就是用来发布新版本的,平时不能在上面干活,干活
+	一般在dev分支上(合并分支时,加上--no-ff参数可用普通合并,合并后的历史有分支,
+	能看出来曾经做过合并,而fast forward合并就看不出来曾经做过合并)
+25.	手头工作没有完成时,先把工作现场git stash
+	回到工作现场 git stash pop
+26.	开发一个新feature最好新建一个分支,如果要丢弃一个没有被合并过的分支
+	可通过git branch -D <name> 强行删除
+27.	多人协作工作模式:
+	1.	首先,试图用git push origin branch-name 推送自己的修改
+	2.	如果推送失败,则因为远程分支比你的本地新,需先用git pull试图合并
+	3.	如果合并有冲突,则解决冲突,并在本地提交
+	4.	没有冲突或解决冲突后,再用git push origin branch-name推送
+	5.	若本地分支和远程分支的链接关系没有创建,用命令
+		git branch --set-upstream branch-name origin/branch-name
+28.	查看远程库信息:		git remote -v
+28.	从本地推送分支:		git push origin branch-name
+29.	在本地创建和远程分支对应的分支:	git checkout -b branch-name origin/branch-name
+30.	从远程抓取分支:		git pull
+31.	新建便签:			git tag <name> 默认为HEAD,也可指定一个commit id
+32.	指定标签信息:		git tag -a <tagname> -m "balabalbala..."
+33.	用PGP签名标签:		git tag -s <tagname> -m "balabalbala..."
+34.	查看所有标签:		git tag
+35.	推送一个本地标签:	git push origin <tagname>
+36.	推送全部未推送过的本地标签:		git push origin --tags
+37.	删除本地标签:		git tag -d <tagname>
+38.	删除远程标签:		git push origin :refs/tags/<tagname>
+39.	忽略某些文件时,需要编写.gitignore 文件本身要放到版本库里,并且可以对它
+	做版本管理
